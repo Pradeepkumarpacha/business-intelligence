@@ -14,7 +14,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS for Fission Labs styling
+# Custom CSS for AI Business Intelligence styling
 st.markdown("""
 <style>
     /* Import Inter font */
@@ -164,16 +164,16 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# Custom header with Fission Labs branding
+# Custom header with AI Business Intelligence branding
 st.markdown("""
 <div class="custom-header">
     <div class="header-content">
         <div class="header-text">
-            <h1>âš›ï¸ Fission Labs</h1>
+            <h1>🚀 AI Business Intelligence</h1>
             <p>AI-powered insights for GTM, Product Marketing & Growth Teams</p>
         </div>
         <div class="logo-container">
-            <img src="https://cdn.prod.website-files.com/61ffed246e785f28c1a44633/63edbbc5b6b5f37b605cf0f2_fl-footer-p-500.png" alt="Fission Labs Logo" />
+            <img src="https://cdn.prod.website-files.com/61ffed246e785f28c1a44633/63edbbc5b6b5f37b605cf0f2_fl-footer-p-500.png" alt="AI Business Intelligence Logo" />
         </div>
     </div>
 </div>
@@ -499,11 +499,12 @@ if company_name:
 st.markdown("---")
 st.markdown("""
 <div style='text-align: center; color: #94a3b8; padding: 20px;'>
-    <p>Powered by <strong>Fission Labs</strong> â€¢ AI-Led Innovation â€¢ Engineering Excellence</p>
+    <p>Powered by <strong>AI Business Intelligence</strong> â€¢ AI-Led Innovation â€¢ Engineering Excellence</p>
     <p><a href='https://linkedin.com/in/pradeepkumarpacha' target='_blank' style='color: #00d4ff;'>LinkedIn</a> | 
     <a href='mailto:pradeep.pacha@gmail.com' style='color: #00d4ff;'>Contact</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
