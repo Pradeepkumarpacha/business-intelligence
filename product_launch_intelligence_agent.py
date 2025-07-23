@@ -1,4 +1,4 @@
-import streamlit as st
+﻿import streamlit as st
 from agno.agent import Agent
 from agno.models.openai import OpenAIChat
 from agno.tools.firecrawl import FirecrawlTools
@@ -8,8 +8,8 @@ from textwrap import dedent
 import os
 
 st.set_page_config(
-    page_title="Fission Labs | Business Intelligence Report",
-    page_icon="⚛️",
+    page_title="AI Business Intelligence Platform",
+    page_icon="âš›ï¸",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -169,8 +169,8 @@ st.markdown("""
 <div class="custom-header">
     <div class="header-content">
         <div class="header-text">
-            <h1>⚛️ Fission Labs</h1>
-            <p>Business Intelligence Report - AI-powered insights for GTM, Product Marketing & Growth Teams</p>
+            <h1>âš›ï¸ Fission Labs</h1>
+            <p>AI-powered insights for GTM, Product Marketing & Growth Teams</p>
         </div>
         <div class="logo-container">
             <img src="https://cdn.prod.website-files.com/61ffed246e785f28c1a44633/63edbbc5b6b5f37b605cf0f2_fl-footer-p-500.png" alt="Fission Labs Logo" />
@@ -181,7 +181,7 @@ st.markdown("""
 
 load_dotenv()
 
-st.sidebar.header("🔑 API Configuration")
+st.sidebar.header("ðŸ”‘ API Configuration")
 with st.sidebar.container():
     openai_key = st.text_input(
         "OpenAI API Key",
@@ -219,10 +219,10 @@ if openai_key and firecrawl_key:
         You are a senior Go-To-Market strategist who evaluates competitor product launches with a critical, evidence-driven lens.
         
         Your objective is to uncover:
-        • How the product is positioned in the market
-        • Which launch tactics drove success (strengths)  
-        • Where execution fell short (weaknesses)
-        • Actionable learnings competitors can leverage
+        â€¢ How the product is positioned in the market
+        â€¢ Which launch tactics drove success (strengths)  
+        â€¢ Where execution fell short (weaknesses)
+        â€¢ Actionable learnings competitors can leverage
         
         Always cite observable signals (messaging, pricing actions, channel mix, timing, engagement metrics). Maintain a crisp, executive tone and focus on strategic value.
         
@@ -242,11 +242,11 @@ if openai_key and firecrawl_key:
         You are a market research expert specializing in sentiment analysis and consumer perception tracking.
         
         Your expertise includes:
-        • Analyzing social media sentiment and customer feedback
-        • Identifying positive and negative sentiment drivers
-        • Tracking brand perception trends across platforms  
-        • Monitoring customer satisfaction and review patterns
-        • Providing actionable insights on market reception
+        â€¢ Analyzing social media sentiment and customer feedback
+        â€¢ Identifying positive and negative sentiment drivers
+        â€¢ Tracking brand perception trends across platforms  
+        â€¢ Monitoring customer satisfaction and review patterns
+        â€¢ Providing actionable insights on market reception
         
         Focus on extracting sentiment signals from social platforms, review sites, forums, and customer feedback channels.
         
@@ -266,12 +266,12 @@ if openai_key and firecrawl_key:
         You are a product launch performance analyst who specializes in tracking and analyzing launch KPIs.
         
         Your focus areas include:
-        • User adoption and engagement metrics
-        • Revenue and business performance indicators
-        • Market penetration and growth rates
-        • Press coverage and media attention analysis
-        • Social media traction and viral coefficient tracking
-        • Competitive market share analysis
+        â€¢ User adoption and engagement metrics
+        â€¢ Revenue and business performance indicators
+        â€¢ Market penetration and growth rates
+        â€¢ Press coverage and media attention analysis
+        â€¢ Social media traction and viral coefficient tracking
+        â€¢ Competitive market share analysis
         
         Always provide quantitative insights with context and benchmark against industry standards when possible.
         
@@ -291,7 +291,7 @@ else:
 
 def expand_competitor_report(bullet_text: str, competitor: str) -> str:
     if not launch_analyst:
-        st.error("⚠️ Please enter both API keys in the sidebar first.")
+        st.error("âš ï¸ Please enter both API keys in the sidebar first.")
         return ""
     
     prompt = (
@@ -300,7 +300,7 @@ def expand_competitor_report(bullet_text: str, competitor: str) -> str:
         f"=== FORMAT SPECIFICATION ===\n"
         f"# {competitor} -- Launch Review\n\n"
         f"## 1. Market & Product Positioning\n"
-        f"• Bullet point summary of how the product is positioned (max 6 bullets).\n\n"
+        f"â€¢ Bullet point summary of how the product is positioned (max 6 bullets).\n\n"
         f"## 2. Launch Strengths\n"
         f"| Strength | Evidence / Rationale |\n|---|---|\n| ... | ... | (add 4-6 rows)\n\n"
         f"## 3. Launch Weaknesses\n"
@@ -309,8 +309,8 @@ def expand_competitor_report(bullet_text: str, competitor: str) -> str:
         f"1. ... (max 5 numbered recommendations)\n\n"
         f"=== SOURCE BULLETS ===\n{bullet_text}\n\n"
         f"Guidelines:\n"
-        f"• Populate the tables with specific points derived from the bullets.\n"
-        f"• Only include rows that contain meaningful data; omit any blank entries."
+        f"â€¢ Populate the tables with specific points derived from the bullets.\n"
+        f"â€¢ Only include rows that contain meaningful data; omit any blank entries."
     )
     
     resp = launch_analyst.run(prompt)
@@ -318,7 +318,7 @@ def expand_competitor_report(bullet_text: str, competitor: str) -> str:
 
 def expand_sentiment_report(bullet_text: str, competitor: str) -> str:
     if not sentiment_analyst:
-        st.error("⚠️ Please enter both API keys in the sidebar first.")
+        st.error("âš ï¸ Please enter both API keys in the sidebar first.")
         return ""
     
     prompt = (
@@ -332,7 +332,7 @@ def expand_sentiment_report(bullet_text: str, competitor: str) -> str:
 
 def expand_metrics_report(bullet_text: str, competitor: str) -> str:
     if not metrics_analyst:
-        st.error("⚠️ Please enter both API keys in the sidebar first.")
+        st.error("âš ï¸ Please enter both API keys in the sidebar first.")
         return ""
     
     prompt = (
@@ -345,7 +345,7 @@ def expand_metrics_report(bullet_text: str, competitor: str) -> str:
     return resp.content if hasattr(resp, "content") else str(resp)
 
 # Company input section
-st.subheader("🏢 Company Analysis")
+st.subheader("ðŸ¢ Company Analysis")
 with st.container():
     col1, col2 = st.columns([3, 1])
     with col1:
@@ -357,16 +357,16 @@ with st.container():
         )
     with col2:
         if company_name:
-            st.success(f"✓ Ready to analyze **{company_name}**")
+            st.success(f"âœ“ Ready to analyze **{company_name}**")
 
 # Create tabs for analysis types
-analysis_tabs = st.tabs(["🔍 Competitor Analysis", "💬 Market Sentiment", "📈 Launch Metrics"])
+analysis_tabs = st.tabs(["ðŸ” Competitor Analysis", "ðŸ’¬ Market Sentiment", "ðŸ“ˆ Launch Metrics"])
 
 # Competitor Analysis Tab
 with analysis_tabs[0]:
     if company_name:
         analyze_btn = st.button(
-            "🚀 Analyze Competitor Strategy",
+            "ðŸš€ Analyze Competitor Strategy",
             key="competitor_btn",
             type="primary",
             use_container_width=True
@@ -374,15 +374,15 @@ with analysis_tabs[0]:
         
         if analyze_btn:
             if not launch_analyst:
-                st.error("⚠️ Please enter both API keys in the sidebar first.")
+                st.error("âš ï¸ Please enter both API keys in the sidebar first.")
             else:
-                with st.spinner("🔍 Launch Analyst gathering competitive intelligence..."):
+                with st.spinner("ðŸ” Launch Analyst gathering competitive intelligence..."):
                     try:
                         bullets = launch_analyst.run(
                             f"Generate up to 16 evidence-based insight bullets about {company_name}'s most recent product launches.\n"
                             f"Format requirements:\n"
-                            f"• Start every bullet with exactly one tag: Positioning | Strength | Weakness | Learning\n"
-                            f"• Follow the tag with a concise statement (max 30 words) referencing concrete observations: messaging, differentiation, pricing, channel selection, timing, engagement metrics, or customer feedback."
+                            f"â€¢ Start every bullet with exactly one tag: Positioning | Strength | Weakness | Learning\n"
+                            f"â€¢ Follow the tag with a concise statement (max 30 words) referencing concrete observations: messaging, differentiation, pricing, channel selection, timing, engagement metrics, or customer feedback."
                         )
                         
                         long_text = expand_competitor_report(
@@ -390,10 +390,10 @@ with analysis_tabs[0]:
                             company_name
                         )
                         st.session_state.competitor_response = long_text
-                        st.success("✅ Competitor analysis ready")
+                        st.success("âœ… Competitor analysis ready")
                         st.rerun()
                     except Exception as e:
-                        st.error(f"❌ Error: {e}")
+                        st.error(f"âŒ Error: {e}")
     
     # Display results
     if st.session_state.competitor_response:
@@ -403,7 +403,7 @@ with analysis_tabs[0]:
 with analysis_tabs[1]:
     if company_name:
         analyze_btn = st.button(
-            "💬 Analyze Market Sentiment",
+            "ðŸ’¬ Analyze Market Sentiment",
             key="sentiment_btn",
             type="primary",
             use_container_width=True
@@ -411,9 +411,9 @@ with analysis_tabs[1]:
         
         if analyze_btn:
             if not sentiment_analyst:
-                st.error("⚠️ Please enter both API keys in the sidebar first.")
+                st.error("âš ï¸ Please enter both API keys in the sidebar first.")
             else:
-                with st.spinner("💬 Sentiment Specialist analyzing market perception..."):
+                with st.spinner("ðŸ’¬ Sentiment Specialist analyzing market perception..."):
                     try:
                         bullets = sentiment_analyst.run(
                             f"Analyze market sentiment for {company_name} across social media, reviews, and customer feedback channels. "
@@ -425,10 +425,10 @@ with analysis_tabs[1]:
                             company_name
                         )
                         st.session_state.sentiment_response = long_text
-                        st.success("✅ Sentiment analysis ready")
+                        st.success("âœ… Sentiment analysis ready")
                         st.rerun()
                     except Exception as e:
-                        st.error(f"❌ Error: {e}")
+                        st.error(f"âŒ Error: {e}")
     
     # Display results
     if st.session_state.sentiment_response:
@@ -438,7 +438,7 @@ with analysis_tabs[1]:
 with analysis_tabs[2]:
     if company_name:
         analyze_btn = st.button(
-            "📈 Analyze Launch Metrics",
+            "ðŸ“ˆ Analyze Launch Metrics",
             key="metrics_btn",
             type="primary",
             use_container_width=True
@@ -446,9 +446,9 @@ with analysis_tabs[2]:
         
         if analyze_btn:
             if not metrics_analyst:
-                st.error("⚠️ Please enter both API keys in the sidebar first.")
+                st.error("âš ï¸ Please enter both API keys in the sidebar first.")
             else:
-                with st.spinner("📈 Metrics Specialist tracking launch performance..."):
+                with st.spinner("ðŸ“ˆ Metrics Specialist tracking launch performance..."):
                     try:
                         bullets = metrics_analyst.run(
                             f"Track and analyze launch performance metrics for {company_name}. "
@@ -460,10 +460,10 @@ with analysis_tabs[2]:
                             company_name
                         )
                         st.session_state.metrics_response = long_text
-                        st.success("✅ Metrics analysis ready")
+                        st.success("âœ… Metrics analysis ready")
                         st.rerun()
                     except Exception as e:
-                        st.error(f"❌ Error: {e}")
+                        st.error(f"âŒ Error: {e}")
     
     # Display results
     if st.session_state.metrics_response:
@@ -471,36 +471,37 @@ with analysis_tabs[2]:
 
 # Sidebar status
 with st.sidebar.container():
-    st.markdown("### 🤖 System Status")
+    st.markdown("### ðŸ¤– System Status")
     if openai_key and firecrawl_key:
-        st.success("✅ All agents ready")
+        st.success("âœ… All agents ready")
     else:
-        st.error("❌ API keys required")
+        st.error("âŒ API keys required")
 
 # Analysis status
 if company_name:
     with st.sidebar.container():
-        st.markdown("### 📊 Analysis Status")
+        st.markdown("### ðŸ“Š Analysis Status")
         st.markdown(f"**Company:** {company_name}")
         
         status_items = [
-            ("🔍", "Competitor Analysis", st.session_state.get('competitor_response')),
-            ("💬", "Sentiment Analysis", st.session_state.get('sentiment_response')),
-            ("📈", "Metrics Analysis", st.session_state.get('metrics_response'))
+            ("ðŸ”", "Competitor Analysis", st.session_state.get('competitor_response')),
+            ("ðŸ’¬", "Sentiment Analysis", st.session_state.get('sentiment_response')),
+            ("ðŸ“ˆ", "Metrics Analysis", st.session_state.get('metrics_response'))
         ]
         
         for icon, name, status in status_items:
             if status:
-                st.success(f"{icon} {name} ✓")
+                st.success(f"{icon} {name} âœ“")
             else:
-                st.info(f"{icon} {name} ⏳")
+                st.info(f"{icon} {name} â³")
 
 # Footer
 st.markdown("---")
 st.markdown("""
 <div style='text-align: center; color: #94a3b8; padding: 20px;'>
-    <p>Powered by <strong>Fission Labs</strong> • AI-Led Innovation • Engineering Excellence</p>
-    <p><a href='https://www.fissionlabs.com' target='_blank' style='color: #00d4ff;'>Visit Fission Labs</a> | 
-    <a href='mailto:info@fissionlabs.com' style='color: #00d4ff;'>Contact Us</a></p>
+    <p>Powered by <strong>Fission Labs</strong> â€¢ AI-Led Innovation â€¢ Engineering Excellence</p>
+    <p><a href='https://linkedin.com/in/pradeepkumarpacha' target='_blank' style='color: #00d4ff;'>LinkedIn</a> | 
+    <a href='mailto:pradeep.pacha@gmail.com' style='color: #00d4ff;'>Contact</a></p>
 </div>
 """, unsafe_allow_html=True)
+
