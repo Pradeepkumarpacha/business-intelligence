@@ -9,7 +9,7 @@ import os
 
 st.set_page_config(
     page_title="AI Business Intelligence Platform",
-    page_icon="âš›ï¸",
+    page_icon="🚀",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -181,7 +181,7 @@ st.markdown("""
 
 load_dotenv()
 
-st.sidebar.header("ðŸ”‘ API Configuration")
+st.sidebar.header("🔑 API Configuration")
 with st.sidebar.container():
     openai_key = st.text_input(
         "OpenAI API Key",
@@ -345,7 +345,7 @@ def expand_metrics_report(bullet_text: str, competitor: str) -> str:
     return resp.content if hasattr(resp, "content") else str(resp)
 
 # Company input section
-st.subheader("ðŸ¢ Company Analysis")
+st.subheader("🏢 Company Analysis")
 with st.container():
     col1, col2 = st.columns([3, 1])
     with col1:
@@ -360,7 +360,7 @@ with st.container():
             st.success(f"âœ“ Ready to analyze **{company_name}**")
 
 # Create tabs for analysis types
-analysis_tabs = st.tabs(["ðŸ” Competitor Analysis", "ðŸ’¬ Market Sentiment", "ðŸ“ˆ Launch Metrics"])
+analysis_tabs = st.tabs(["🔍 Competitor Analysis", "💬 Market Sentiment", "📈 Launch Metrics"])
 
 # Competitor Analysis Tab
 with analysis_tabs[0]:
@@ -471,7 +471,7 @@ with analysis_tabs[2]:
 
 # Sidebar status
 with st.sidebar.container():
-    st.markdown("### ðŸ¤– System Status")
+    st.markdown("### 🤖 System Status")
     if openai_key and firecrawl_key:
         st.success("âœ… All agents ready")
     else:
@@ -480,7 +480,7 @@ with st.sidebar.container():
 # Analysis status
 if company_name:
     with st.sidebar.container():
-        st.markdown("### ðŸ“Š Analysis Status")
+        st.markdown("### 📊 Analysis Status")
         st.markdown(f"**Company:** {company_name}")
         
         status_items = [
@@ -504,5 +504,6 @@ st.markdown("""
     <a href='mailto:pradeep.pacha@gmail.com' style='color: #00d4ff;'>Contact</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
