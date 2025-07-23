@@ -473,7 +473,7 @@ with analysis_tabs[2]:
 with st.sidebar.container():
     st.markdown("### 🤖 System Status")
     if openai_key and firecrawl_key:
-        st.success("âœ… All agents ready")
+        st.success("✅ All agents ready")
     else:
         st.error("âŒ API keys required")
 
@@ -504,6 +504,7 @@ st.markdown("""
     <a href='mailto:pradeep.pacha@gmail.com' style='color: #00d4ff;'>Contact</a></p>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
