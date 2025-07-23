@@ -58,7 +58,7 @@ Access the live application at: **Coming Soon - Deploying to Render**
 
 ## 🤝 Support
 
-- 📧 Email: pradeep.pacha@gmail.com
+- 📧 Email: pachapradeepkumar@gmail.com
 - 💼 LinkedIn: [Pradeep Kumar Pacha](https://linkedin.com/in/pradeepkumarpacha)
 
 ---
