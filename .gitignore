@@ -1,0 +1,13 @@
+﻿venv/
+venv_windows/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.DS_Store
+Thumbs.db
+.env
+*.log
+.pytest_cache/
+.coverage
+htmlcov/
